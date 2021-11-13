@@ -5,11 +5,15 @@ const AUTH_URL =
 
 export default function Login() {
     return (
-        <a
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            href={AUTH_URL}
-        >
-            Login
-        </a>
+        <div className="container mx-auto">
+            <div className="flex justify-center my-12">
+                <a
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    href={AUTH_URL}
+                >
+                    Login with Spotify
+                </a>
+            </div>
+        </div>
     );
 }
