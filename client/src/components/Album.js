@@ -14,12 +14,12 @@ export default function Album({ album }) {
             ></img>
             <div className="lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                    <div className="text-gray-900 font-bold text-3xl mb-2">
+                    <div className="text-gray-900 font-bold text-lg lg:text-2xl mb-2">
                         {album.title}
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <div className="text-2xl">
+                    <div className="text-md lg:text-xl">
                         <p className="text-gray-900 leading-none">
                             {album.artist}
                         </p>

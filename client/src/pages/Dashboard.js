@@ -64,10 +64,10 @@ export default function Dashboard({ code }) {
 
     return (
         <div>
-            <h1 className="text-center text-5xl font-bold pt-16">
+            <h1 className="text-center text-5xl font-bold pt-16 pb-4">
                 New Releases
             </h1>
-            <div className="justify-center h-screen w-full px-48 py-8">
+            <div className="justify-center h-screen w-full px-8 lg:px-48 py-3 lg:py-8">
                 {albums ? (
                     albums.map((album) => <Album album={album} />)
                 ) : (
