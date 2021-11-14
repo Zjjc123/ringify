@@ -1,14 +1,79 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
+
+import SpotifyWebApi from "spotify-web-api-node";
+import Album from "../components/Album";
+
+const spotifyApi = new SpotifyWebApi({
+    clientId: "9149f32554f7425bac1191a602bb83e7",
+});
 
 export default function Dashboard({ code }) {
     const accessToken = useAuth(code);
+    const [albums, setAlbums] = useState();
 
-    /*
     useEffect(() => {
         if (!accessToken) return;
         spotifyApi.setAccessToken(accessToken);
-    });
-    */
-    return <div>{accessToken}</div>;
+    }, [accessToken]);
+
+    useEffect(() => {
+        if (!accessToken) return;
+        var newAlbums = [];
+        spotifyApi
+            .getFollowedArtists({ limit: 50 })
+            .then((data) => {
+                // for each followed artist
+                return Promise.all(
+                    data.body.artists.items.map((artist) => {
+                        return spotifyApi
+                            .getArtistAlbums(artist.id)
+                            .then((data) => {
+                                // for each album by that artist
+                                data.body.items.forEach((album) => {
+                                    const dateReleased = new Date(
+                                        album.release_date
+                                    );
+                                    const timeDifference =
+                                        Date.now() - dateReleased.getTime();
+                                    const dayDifference =
+                                        timeDifference / (1000 * 3600 * 24);
+
+                                    if (dayDifference < 30) {
+                                        newAlbums.push(album);
+                                    }
+                                });
+                            });
+                    })
+                );
+            })
+            .then(() => {
+                setAlbums(
+                    newAlbums.map((album) => {
+                        return {
+                            artist: album.artists[0].name,
+                            title: album.name,
+                            url: album.external_urls.spotify,
+                            albumUrl: album.images[0].url,
+                            releaseDate: album.release_date,
+                        };
+                    })
+                );
+            });
+    }, [accessToken]);
+
+    return (
+        <div>
+            <h1 className="text-center text-5xl font-bold pt-16">
+                New Releases
+            </h1>
+            <div className="justify-center h-screen w-full px-48 py-8">
+                {albums ? (
+                    albums.map((album) => <Album album={album} />)
+                ) : (
+                    <div />
+                )}
+            </div>
+        </div>
+    );
 }
