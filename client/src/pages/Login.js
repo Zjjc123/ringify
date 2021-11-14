@@ -6,14 +6,20 @@ const AUTH_URL =
 export default function Login() {
     return (
         <div className="container mx-auto">
-            <div className="flex justify-center my-12">
+            <div className="flex flex-col justify-center items-center my-12 text-center">
+                <h1 className="flex text-5xl text-center">
+                    Get a collection of new releases from artists you follow
+                </h1>
                 <a
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 my-8 rounded"
                     href={AUTH_URL}
                 >
                     Login with Spotify
                 </a>
             </div>
+            <footer class="fixed bottom-0 right-0 m-2 text-sm">
+                Jason Zhang 2021
+            </footer>
         </div>
     );
 }
