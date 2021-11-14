@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ringify/static/css/main.0747a65d.chunk.css",
-    "main.js": "/ringify/static/js/main.0962818b.chunk.js",
-    "main.js.map": "/ringify/static/js/main.0962818b.chunk.js.map",
+    "main.css": "/ringify/static/css/main.b7f9d724.chunk.css",
+    "main.js": "/ringify/static/js/main.9f59eef8.chunk.js",
+    "main.js.map": "/ringify/static/js/main.9f59eef8.chunk.js.map",
     "runtime-main.js": "/ringify/static/js/runtime-main.da055712.js",
     "runtime-main.js.map": "/ringify/static/js/runtime-main.da055712.js.map",
     "static/js/2.25fd342b.chunk.js": "/ringify/static/js/2.25fd342b.chunk.js",
     "static/js/2.25fd342b.chunk.js.map": "/ringify/static/js/2.25fd342b.chunk.js.map",
     "index.html": "/ringify/index.html",
-    "static/css/main.0747a65d.chunk.css.map": "/ringify/static/css/main.0747a65d.chunk.css.map",
+    "static/css/main.b7f9d724.chunk.css.map": "/ringify/static/css/main.b7f9d724.chunk.css.map",
     "static/js/2.25fd342b.chunk.js.LICENSE.txt": "/ringify/static/js/2.25fd342b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.da055712.js",
     "static/js/2.25fd342b.chunk.js",
-    "static/css/main.0747a65d.chunk.css",
-    "static/js/main.0962818b.chunk.js"
+    "static/css/main.b7f9d724.chunk.css",
+    "static/js/main.9f59eef8.chunk.js"
   ]
 }
