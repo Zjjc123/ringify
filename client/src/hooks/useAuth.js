@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const homePath = "/ringify";
+
 export default function useAuth(code) {
     const [accessToken, setAccessToken] = useState();
     const [refreshToken, setRefreshToken] = useState();
@@ -15,10 +17,10 @@ export default function useAuth(code) {
                 setAccessToken(res.data.accessToken);
                 setRefreshToken(res.data.refreshToken);
                 setExpiresIn(res.data.expiresIn);
-                window.history.pushState({}, null, "/");
+                window.history.pushState({}, null, homePath);
             })
             .catch(() => {
-                window.location = "/";
+                window.location = homePath;
             });
     }, [code]);
 
@@ -34,7 +36,7 @@ export default function useAuth(code) {
                     setExpiresIn(res.data.expiresIn);
                 })
                 .catch(() => {
-                    window.location = "/";
+                    window.location = homePath;
                 });
         }, (expiresIn - 60) * 1000);
         return () => clearInterval(interval);
