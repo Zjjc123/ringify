@@ -1,7 +1,16 @@
 import React from "react";
 
+const CLIENT_ID = "9149f32554f7425bac1191a602bb83e7";
+const REDIRECT_URL = "https://zjjc123.github.io/ringify";
+const SCOPE = "user-follow-read";
+
 const AUTH_URL =
-    "https://accounts.spotify.com/authorize?client_id=9149f32554f7425bac1191a602bb83e7&response_type=code&redirect_uri=https://zjjc123.github.io/ringify&scope=user-follow-read";
+    "https://accounts.spotify.com/authorize?client_id=" +
+    CLIENT_ID +
+    "&response_type=code&redirect_uri=" +
+    REDIRECT_URL +
+    "&scope=" +
+    SCOPE;
 
 export default function Login() {
     return (
