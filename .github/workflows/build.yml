@@ -22,9 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
+    - name: Debug
+      run: ls
+      
     - name: Go To Directory
       run: cd client
-    
+      
+    - name: Debug
+      run: ls
+      
     # Install Dependencies
     - name: Install Dependencies
       run: npm install
