@@ -60,8 +60,8 @@ export default function Dashboard({ code }) {
                 setAlbums(
                     unsorted.sort(
                         (a, b) =>
-                            new Date(a.releaseDate).getTime() -
-                            new Date(b.releaseDate).getTime()
+                            new Date(b.releaseDate).getTime() -
+                            new Date(a.releaseDate).getTime()
                     )
                 );
             });
