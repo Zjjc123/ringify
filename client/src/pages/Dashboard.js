@@ -48,16 +48,21 @@ export default function Dashboard({ code }) {
                 );
             })
             .then(() => {
+                const unsorted = newAlbums.map((album) => {
+                    return {
+                        artist: album.artists[0].name,
+                        title: album.name,
+                        url: album.external_urls.spotify,
+                        albumUrl: album.images[0].url,
+                        releaseDate: album.release_date,
+                    };
+                });
                 setAlbums(
-                    newAlbums.map((album) => {
-                        return {
-                            artist: album.artists[0].name,
-                            title: album.name,
-                            url: album.external_urls.spotify,
-                            albumUrl: album.images[0].url,
-                            releaseDate: album.release_date,
-                        };
-                    })
+                    unsorted.sort(
+                        (a, b) =>
+                            Date(a.releaseDate).getTime() -
+                            Date(b.releaseDate).getTime()
+                    )
                 );
             });
     }, [accessToken]);
