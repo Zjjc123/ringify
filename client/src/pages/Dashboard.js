@@ -57,8 +57,11 @@ export default function Dashboard({ code }) {
                         releaseDate: album.release_date,
                     };
                 });
+                const filtered = unsorted.filter(
+                    (album) => album.artist !== "Various Artists"
+                );
                 setAlbums(
-                    unsorted.sort(
+                    filtered.sort(
                         (a, b) =>
                             new Date(b.releaseDate).getTime() -
                             new Date(a.releaseDate).getTime()
