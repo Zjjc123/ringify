@@ -79,7 +79,7 @@ export default function Dashboard({ code }) {
                 {albums ? (
                     albums.map((album) => <Album album={album} />)
                 ) : (
-                    <div />
+                    <div className="py-8 text-2xl text-center">Loading</div>
                 )}
             </div>
         </div>
