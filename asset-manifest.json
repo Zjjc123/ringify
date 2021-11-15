@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ringify/static/css/main.741dfc6e.chunk.css",
-    "main.js": "/ringify/static/js/main.4c7343aa.chunk.js",
-    "main.js.map": "/ringify/static/js/main.4c7343aa.chunk.js.map",
+    "main.js": "/ringify/static/js/main.dc96d0c5.chunk.js",
+    "main.js.map": "/ringify/static/js/main.dc96d0c5.chunk.js.map",
     "runtime-main.js": "/ringify/static/js/runtime-main.da055712.js",
     "runtime-main.js.map": "/ringify/static/js/runtime-main.da055712.js.map",
     "static/js/2.25fd342b.chunk.js": "/ringify/static/js/2.25fd342b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.da055712.js",
     "static/js/2.25fd342b.chunk.js",
     "static/css/main.741dfc6e.chunk.css",
-    "static/js/main.4c7343aa.chunk.js"
+    "static/js/main.dc96d0c5.chunk.js"
   ]
 }
