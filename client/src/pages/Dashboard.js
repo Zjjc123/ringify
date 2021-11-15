@@ -76,10 +76,14 @@ export default function Dashboard({ code }) {
                 New Releases
             </h1>
             <div className="justify-center h-screen w-full px-8 lg:px-48 py-3 lg:py-8">
-                {albums ? (
-                    albums.map((album) => <Album album={album} />)
+                {!albums ? (
+                    <div className="py-8 text-2xl text-center">Loading...</div>
+                ) : albums.length === 0 ? (
+                    <div className="py-8 text-4xl text-center">
+                        No New Music Found
+                    </div>
                 ) : (
-                    <div className="py-8 text-2xl text-center">Loading</div>
+                    albums.map((album) => <Album album={album} />)
                 )}
             </div>
         </div>
